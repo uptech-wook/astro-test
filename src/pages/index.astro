@@ -1,6 +1,14 @@
 ---
+import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+
+const pageTitle = 'Home Page';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -13,11 +21,17 @@ import Card from '../components/Card.astro';
 			<title>Astro</title>
 		</head>
 		<body>
-			<a href="/">Home</a>
-			<a href="/main/">main</a>
-			<a href="/blog/">Blog</a>
-			<h1>My Astro Site !!!</h1>
+			<Header />
+			<h1>{pageTitle}</h1>
+			<Footer />
+			
+			<BaseLayout>
+				<h2>My awesome blog subtitle</h2>
+			</BaseLayout>
 
+			<script>
+				import "../scripts/menu.js";
+			</script>
 		</body>
 
 	</html>
